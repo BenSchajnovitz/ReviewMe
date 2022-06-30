@@ -1,0 +1,14 @@
+.container {
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+    grid-template-areas:
+      'img name'
+      'img comment'
+      'img comment';
+
+      gap: 10px;
+
+    .avatar-image { grid-area: img; }
+    .name { grid-area: name; }
+    .comment { grid-area: comment; }
+}

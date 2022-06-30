@@ -1,0 +1,18 @@
+<div class="container">
+
+    <div *ngIf="!reviewList || reviewList.length === 0">No Comments</div>    
+
+    <div *ngFor="let review of reviewList; let i = index ">
+        
+        <div class="review-item" *ngIf="!review.isEdit">
+            <app-review-item [reviewData]="review"></app-review-item>
+            <button (click)="editReview(i)">Edit</button>
+            <button (click)="deleteReview(i)">Delete</button>
+        </div>
+
+        <div class="review-item" *ngIf="review.isEdit">
+            <app-review-form [reviewToEdit]="review" [reviewIndex]="i" ></app-review-form>
+        </div>
+
+    </div>
+</div>
